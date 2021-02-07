@@ -1,6 +1,9 @@
 plugins {
     id "com.android.application"
     id "androidx.navigation.safeargs"
+    id "dagger.hilt.android.plugin"
+    id "kotlin-android"
+    id "kotlin-kapt"
 }
 
 android {
@@ -55,6 +58,10 @@ dependencies {
 
     // Dependencies: Log
     implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    // Dependencies: DaggerHilt
+    implementation "com.google.dagger:hilt-android:$rootProject.daggerHiltVersion"
+    kapt "com.google.dagger:hilt-android-compiler:$rootProject.daggerHiltVersion"
 
     // Dependencies: Test
     testImplementation 'junit:junit:4.+'
