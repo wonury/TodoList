@@ -47,7 +47,7 @@ public class JoinFragment extends Fragment {
         mBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_join, container, false);
         mViewModel = new JoinViewModel();
-        mBinding.setViewModel(mViewModel);
+        mBinding.setViewModel(mViewModel);//관찰당하는 시점을 결정
 
         setUpViewModel();
         return mBinding.getRoot();
