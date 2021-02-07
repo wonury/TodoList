@@ -1,0 +1,63 @@
+plugins {
+    id "com.android.application"
+    id "androidx.navigation.safeargs"
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    defaultConfig {
+        applicationId "com.thepencil.journel"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // Dependencies: Design
+    implementation "com.google.android.material:material:$rootProject.materialVesion"
+
+    // Dependencies: androidx
+    implementation "androidx.appcompat:appcompat:$rootProject.appcompactVersion"
+    implementation "androidx.activity:activity:$rootProject.activityVersion"
+    implementation "androidx.fragment:fragment:$rootProject.fragmentVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayoutVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    // Dependencies: lifecycle
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
+
+    // Dependecies: naviate
+    implementation "androidx.navigation:navigation-fragment:$rootProject.navigateVersion"
+    implementation "androidx.navigation:navigation-ui:$rootProject.navigateVersion"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$rootProject.navigateVersion"
+
+    // Dependencies: Log
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    // Dependencies: Test
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
